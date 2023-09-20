@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box; /* В отличии от content box нету отступов */
+}
+
+body {
+    font-family: 'Muli', sans-serif; /* Шрифт */
+    overflow: hidden; /* Прячет ненужные поправки от гугла?? */
+    margin: 0; /* Нету отступов*/
+    background-color: black;
+    height: 100vh; /* боди на 100 проц?? */
+    display: flex; /* параметры сжимания экрана в зависимости от устройства?? */
+    justify-content: center; /* Выравниваем по горизонтали по центру*/
+    align-items: center; /* выравниваем по вертикали по центру */
+    
+}
+.Box {
+    width: 100%; /* Ширина боксов 100 процнетов */
+    display: flex; /* Делает дочерние эллементы не блочными а резиновыми, ставятся по порядку крч*/
+    padding: 0 /* Сверху и снизу */ 40px /* Слева и справа */;
+}
+
+.animate {
+    height: 90vh; /* Высота 90 проц от видимой части экрана */
+    border-radius: 40px;
+    margin: 10px; /* Отступ между обьектами */
+    cursor: pointer; /* При наведении курсора показывает значек */
+    color: rgb(231, 226, 226);
+    flex: 1; /* Пропоциональное растягивание */
+    background-size: cover; /* Пропоцинально меняет картинку? */
+    background-position: center; /* картинка по центру */
+    background-repeat: no-repeat;
+    position: relative; /* Заголовок позиционируется пропоционально к картинке */
+    transition: all 2s ease-in-out;
+
+}
+
+.animate h3 {
+    position: absolute; /* Меняет расположение текста для всех браузеров?? */
+    font-size: 30px; /* Размер заголовка */
+    bottom: 25px; /* Отступы текста снизу и слева */
+    left: 10px;
+    margin: 0; /* убрать дефолт отступы */
+    opacity: 0; /* добавляем прозрачный текст*/
+    transition: opacity 1s ease-in 1s; /* При нажатии появляется текст */
+}
+
+.animate.active {
+    flex: 15; /* Насколько картинка будет больгая во время клика*/
+}
+.animate.active h3 {
+    opacity: 1;
+    transition: opacity 1s ease-in 1s; /* плавное появление текста*/
+}
